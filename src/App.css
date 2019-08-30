@@ -1,33 +1,155 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+body {
+  font-family: 'Abril Fatface', cursive;
   text-align: center;
+  margin: -50px auto;
+  background-color: #fff;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  margin: 420px 450px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  opacity: .5;
 }
 
-.App-link {
-  color: #61dafb;
+#base {
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.yellowstone {
+  position: relative;
+  top: 100;
+  right: 0;
+  text-align: left;
+  margin: 0px 100px;
+  width: 300px;
+  color: #181818;
+  transform: translateY(-220px);
+  transition: all 300ms ease;
+}
+
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.plume {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  margin: 40px 0px;
+}
+
+.rock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+}
+
+/* box to frame out spinning color */
+
+.spin-cutout {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+#top {
+  height: 5px;
+  width: 800px;
+}
+
+#right {
+  height: 650px;
+  width: 300px;
+  margin: 0px 460px;
+}
+
+#bottom {
+  height: 200px;
+  width: 500px;
+  margin: 460px 0px;
+}
+
+#left {
+  height: 650px;
+  width: 40px;
+}
+
+/* spinning bg color */
+
+@-ms-keyframes spin {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+
+/* plume animation */
+
+@-ms-keyframes plume {    
+    0%, 100% { -webkit-transform: translateY(0); }
+    50% { -webkit-transform: translateY(8px); }
+}
+
+@-moz-keyframes plume {    
+    0%, 100% { -webkit-transform: translateY(0); }
+    50% { -webkit-transform: translateY(8px); }
+}
+@keyframes plume {    
+    0%, 100% { -webkit-transform: translateY(0); }
+    50% { -webkit-transform: translateY(8px); }
+}
+
+@-webkit-keyframes plume {    
+    0%, 100% { -webkit-transform: translateY(0); }
+    50% { -webkit-transform: translateY(8px); }
+}
+
+/* media break */
+
+@media (max-width: 970px) {
+  .yellowstone {
+    margin: 650px -390px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Range Slider */
+
+.range-slider .input-range {
+  -webkit-appearance: none;
+  height: 200px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  transform: rotateZ(180deg);
 }
